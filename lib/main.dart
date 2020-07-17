@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          Image.asset('Victori Icon.png'),
           Center(
             child: RaisedButton(
               color: Colors.red,
