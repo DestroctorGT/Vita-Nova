@@ -5,11 +5,13 @@ class IniciarSesion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
-            'images/Victori Icon.png',
-            scale: 2.0,
+          Center(
+            child: Image.asset(
+              'images/Victori Icon.png',
+              scale: 2.0,
+            ),
           ),
           Text(
             'Vita Nova',
