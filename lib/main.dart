@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vita_nova/screens/iniciar_sesion.dart';
+import 'package:vita_nova/screens/registrarse.dart';
 import 'const.dart';
 import 'screens/home_screen.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: kHomeScreen, page: () => HomeScreen()),
         GetPage(name: kIniciarSesion, page: () => IniciarSesion()),
+        GetPage(name: kRegistrarse, page: () => Registrarse()),
       ],
     );
   }
