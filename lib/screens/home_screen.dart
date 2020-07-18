@@ -5,7 +5,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Image.asset(
             'images/Victori Icon.png',
