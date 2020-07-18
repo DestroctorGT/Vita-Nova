@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 75.0,
+            height: 80.0,
           ),
           Center(
             child: RaisedButton(
@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 50.0,
+            height: 95.0,
           ),
           Padding(
             padding: EdgeInsets.all(15.0),
