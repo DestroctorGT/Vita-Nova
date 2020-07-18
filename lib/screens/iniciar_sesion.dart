@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vita_nova/const.dart';
 
 class IniciarSesion extends StatelessWidget {
   @override
@@ -15,9 +16,7 @@ class IniciarSesion extends StatelessWidget {
           ),
           Text(
             'Vita Nova',
-            style: TextStyle(
-              fontSize: 25.0,
-            ),
+            style: kVitaNovaTextStyle,
           ),
           SizedBox(
             height: 80.0,
