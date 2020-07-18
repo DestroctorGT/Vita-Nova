@@ -15,10 +15,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Text(
             'Vita Nova',
-            style: TextStyle(
-              fontSize: 25.0,
-              fontFamily: 'Berkshire Swash',
-            ),
+            style: kVitaNovaTextStyle,
           ),
           SizedBox(
             height: 80.0,
