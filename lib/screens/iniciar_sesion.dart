@@ -8,18 +8,47 @@ class IniciarSesion extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Center(
+          Flexible(
             child: Image.asset(
               'images/Victori Icon.png',
               scale: 2.0,
             ),
           ),
-          Text(
-            'Vita Nova',
-            style: kVitaNovaTextStyle,
+          Flexible(
+            child: Text(
+              'Vita Nova',
+              style: kVitaNovaTextStyle,
+            ),
           ),
-          SizedBox(
-            height: 80.0,
+          Padding(
+            padding: EdgeInsets.all(45.0),
+            child: Form(
+              child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(45.0),
+            child: Form(
+              child: TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Contraseña',
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                  ),
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
           ),
         ],
       ),
