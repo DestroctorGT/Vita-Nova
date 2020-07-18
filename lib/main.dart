@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'const.dart';
 
 void main() => runApp(MyApp());
-
-const kHomeScreen = 'Home Screen';
 
 class MyApp extends StatelessWidget {
   @override
