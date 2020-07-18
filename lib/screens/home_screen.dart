@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:vita_nova/const.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -31,7 +33,9 @@ class HomeScreen extends StatelessWidget {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(kIniciarSesion);
+              },
             ),
           ),
           SizedBox(
