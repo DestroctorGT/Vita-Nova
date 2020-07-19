@@ -23,19 +23,10 @@ class HomeScreen extends StatelessWidget {
             height: 80.0,
           ),
           Center(
-            child: RaisedButton(
-              color: Colors.indigoAccent,
-              textColor: Colors.white,
-              padding: EdgeInsets.all(20.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Text(
-                'Iniciar Sesión',
-                style: TextStyle(
-                  fontSize: 22.0,
-                ),
-              ),
+            child: UserButton(
+              buttonText: 'Iniciar Sesión',
+              colorButton: Colors.indigoAccent,
+              buttonPadding: EdgeInsets.all(20.0),
               onPressed: () {
                 Get.toNamed(kIniciarSesion);
               },
@@ -45,19 +36,10 @@ class HomeScreen extends StatelessWidget {
             height: 35.0,
           ),
           Center(
-            child: RaisedButton(
-              color: Colors.indigoAccent,
-              textColor: Colors.white,
-              padding: EdgeInsets.all(20.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Text(
-                'Registrarse',
-                style: TextStyle(
-                  fontSize: 22.0,
-                ),
-              ),
+            child: UserButton(
+              colorButton: Colors.indigoAccent,
+              buttonText: 'Registrarse',
+              buttonPadding: EdgeInsets.all(20.0),
               onPressed: () {},
             ),
           ),
@@ -88,6 +70,36 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class UserButton extends StatelessWidget {
+  UserButton(
+      {@required this.colorButton,
+      @required this.buttonText,
+      @required this.onPressed,
+      this.buttonPadding});
+  final Color colorButton;
+  final EdgeInsetsGeometry buttonPadding;
+  final buttonText;
+  final Function onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      color: colorButton,
+      textColor: Colors.white,
+      padding: buttonPadding,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Text(
+        buttonText,
+        style: TextStyle(
+          fontSize: 22.0,
+        ),
+      ),
+      onPressed: onPressed,
     );
   }
 }
