@@ -20,9 +20,9 @@ class IniciarSesion extends StatelessWidget {
               style: kVitaNovaTextStyle,
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(45.0),
-            child: Form(
+          Form(
+            child: Padding(
+              padding: EdgeInsets.only(left: 45.0, right: 45.0, top: 45.0),
               child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
@@ -35,9 +35,10 @@ class IniciarSesion extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(45.0),
-            child: Form(
+          Form(
+            child: Padding(
+              padding: EdgeInsets.only(
+                  left: 45.0, right: 45.0, top: 45.0, bottom: 45.0),
               child: TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
@@ -49,6 +50,16 @@ class IniciarSesion extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          RaisedButton(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              'Iniciar Sesión',
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
+            onPressed: () {},
           ),
         ],
       ),
