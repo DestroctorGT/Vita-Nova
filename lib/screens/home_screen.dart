@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           Image.asset(
             'images/Victori Icon.png',
-            scale: 2.0,
+            scale: 1.8,
           ),
           Text(
             'Vita Nova',
@@ -22,13 +22,15 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: RaisedButton(
-              color: Colors.red,
               textColor: Colors.white,
               padding: EdgeInsets.all(20.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
               child: Text(
                 'Iniciar Sesión',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 22.0,
                 ),
               ),
               onPressed: () {
@@ -37,17 +39,19 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 25.0,
+            height: 35.0,
           ),
           Center(
             child: RaisedButton(
-              color: Colors.red,
               textColor: Colors.white,
               padding: EdgeInsets.all(20.0),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
               child: Text(
                 'Registrarse',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 22.0,
                 ),
               ),
               onPressed: () {},
