@@ -9,9 +9,11 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          Image.asset(
-            'images/Victori Icon.png',
-            scale: 1.8,
+          Flexible(
+            child: Image.asset(
+              'images/Victori Icon.png',
+              scale: 2.2,
+            ),
           ),
           Text(
             'Vita Nova',
@@ -22,6 +24,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: RaisedButton(
+              color: Colors.indigoAccent,
               textColor: Colors.white,
               padding: EdgeInsets.all(20.0),
               shape: RoundedRectangleBorder(
@@ -43,6 +46,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: RaisedButton(
+              color: Colors.indigoAccent,
               textColor: Colors.white,
               padding: EdgeInsets.all(20.0),
               shape: RoundedRectangleBorder(
@@ -61,13 +65,16 @@ class HomeScreen extends StatelessWidget {
             height: 95.0,
           ),
           Padding(
-            padding: EdgeInsets.all(15.0),
+            padding: EdgeInsets.only(bottom: 15.0, right: 15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 RaisedButton(
-                  color: Colors.red,
                   padding: EdgeInsets.all(15.0),
+                  color: Colors.indigoAccent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
                   child: Text(
                     'Donar',
                     style: TextStyle(
