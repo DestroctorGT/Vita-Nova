@@ -53,6 +53,9 @@ class IniciarSesion extends StatelessWidget {
           ),
           RaisedButton(
             padding: EdgeInsets.all(20.0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
             child: Text(
               'Iniciar Sesión',
               style: TextStyle(
