@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
-import 'package:vita_nova/userwidgets/userinputwidget.dart';
+import 'package:vita_nova/user_widgets/userinputwidget.dart';
 
 class IniciarSesion extends StatelessWidget {
   @override
