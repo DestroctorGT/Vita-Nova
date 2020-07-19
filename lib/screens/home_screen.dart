@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
           Center(
             child: UserButton(
               buttonText: 'Iniciar Sesión',
-              colorButton: Colors.indigoAccent,
+              colorButton: kColorButtonDefaultIndigoAccent,
               buttonPadding: EdgeInsets.all(20.0),
               fontSize: 22.0,
               onPressed: () {
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Center(
             child: UserButton(
-              colorButton: Colors.indigoAccent,
+              colorButton: kColorButtonDefaultIndigoAccent,
               buttonText: 'Registrarse',
               buttonPadding: EdgeInsets.all(20.0),
               fontSize: 22.0,
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 UserButton(
                   buttonText: 'Donar',
-                  colorButton: Colors.indigoAccent,
+                  colorButton: kColorButtonDefaultIndigoAccent,
                   fontSize: 15.0,
                   buttonPadding: EdgeInsets.all(15.0),
                   onPressed: () {},
