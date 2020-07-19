@@ -43,7 +43,9 @@ class HomeScreen extends StatelessWidget {
               buttonText: 'Registrarse',
               buttonPadding: EdgeInsets.all(20.0),
               fontSize: 22.0,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(kRegistrarse);
+              },
             ),
           ),
           SizedBox(
