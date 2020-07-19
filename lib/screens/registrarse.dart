@@ -59,7 +59,7 @@ class Registrarse extends StatelessWidget {
           ),
           RaisedButton(
             padding: EdgeInsets.all(20.0),
-            color: Colors.indigoAccent,
+            color: kColorButtonDefaultIndigoAccent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
