@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
               buttonText: 'Iniciar Sesión',
               colorButton: Colors.indigoAccent,
               buttonPadding: EdgeInsets.all(20.0),
+              fontSize: 22.0,
               onPressed: () {
                 Get.toNamed(kIniciarSesion);
               },
@@ -41,6 +42,7 @@ class HomeScreen extends StatelessWidget {
               colorButton: Colors.indigoAccent,
               buttonText: 'Registrarse',
               buttonPadding: EdgeInsets.all(20.0),
+              fontSize: 22.0,
               onPressed: () {},
             ),
           ),
@@ -52,20 +54,13 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                RaisedButton(
-                  padding: EdgeInsets.all(15.0),
-                  color: Colors.indigoAccent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Text(
-                    'Donar',
-                    style: TextStyle(
-                      fontSize: 15.0,
-                    ),
-                  ),
+                UserButton(
+                  buttonText: 'Donar',
+                  colorButton: Colors.indigoAccent,
+                  fontSize: 15.0,
+                  buttonPadding: EdgeInsets.all(15.0),
                   onPressed: () {},
-                ),
+                )
               ],
             ),
           ),
