@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
+import 'package:vita_nova/userwidgets/userinputwidget.dart';
 
 class IniciarSesion extends StatelessWidget {
   @override
@@ -23,15 +24,10 @@ class IniciarSesion extends StatelessWidget {
           Form(
             child: Padding(
               padding: EdgeInsets.only(left: 45.0, right: 45.0, top: 45.0),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  hintStyle: TextStyle(
-                    color: Colors.white,
-                  ),
-                  border: OutlineInputBorder(),
-                ),
+              child: UserInputWidget(
+                inputTextName: 'Email',
+                inputType: TextInputType.emailAddress,
+                obscureTextCheck: false,
               ),
             ),
           ),
@@ -39,20 +35,13 @@ class IniciarSesion extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(
                   left: 45.0, right: 45.0, top: 45.0, bottom: 45.0),
-              child: TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Contraseña',
-                  hintStyle: TextStyle(
-                    color: Colors.white,
-                  ),
-                  border: OutlineInputBorder(),
-                ),
-              ),
+              child: UserInputWidget(
+                  inputTextName: 'Contraseña', obscureTextCheck: true),
             ),
           ),
           RaisedButton(
             padding: EdgeInsets.all(20.0),
+            color: Colors.indigoAccent,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
