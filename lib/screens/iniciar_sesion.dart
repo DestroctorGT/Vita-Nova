@@ -24,7 +24,7 @@ class IniciarSesion extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: 45.0, right: 45.0, top: 45.0),
               child: UserInputWidget(
-                inputTextName: 'Email',
+                inputTextName: 'Correo',
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
               ),
