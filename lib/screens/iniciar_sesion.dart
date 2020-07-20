@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
+import 'package:get/get.dart';
 
 class IniciarSesion extends StatelessWidget {
   @override
@@ -55,7 +56,9 @@ class IniciarSesion extends StatelessWidget {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(kPaginaDeInicio);
+              },
             ),
           ),
         ],
