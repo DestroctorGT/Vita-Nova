@@ -10,18 +10,20 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
-          Flexible(
-            child: Image.asset(
-              'images/Victori Icon.png',
-              scale: 2.2,
-            ),
-          ),
-          Text(
-            'Vita Nova',
-            style: kVitaNovaTextStyle,
+          Column(
+            children: <Widget>[
+              Image.asset(
+                'images/Victori Icon.png',
+                scale: 2.0,
+              ),
+              Text(
+                'Vita Nova',
+                style: kVitaNovaTextStyle,
+              ),
+            ],
           ),
           SizedBox(
-            height: 80.0,
+            height: 55.0,
           ),
           Center(
             child: UserButton(
