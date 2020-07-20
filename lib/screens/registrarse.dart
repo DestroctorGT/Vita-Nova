@@ -6,18 +6,24 @@ class Registrarse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: <Widget>[
-          Flexible(
-            child: Image.asset(
-              'images/Victori Icon.png',
-              scale: 2.0,
-            ),
+          Column(
+            children: <Widget>[
+              Image.asset(
+                'images/Victori Icon.png',
+                scale: 2.0,
+              ),
+              Center(
+                child: Text(
+                  'Vita Nova',
+                  style: kVitaNovaTextStyle,
+                ),
+              ),
+            ],
           ),
-          Text(
-            'Vita Nova',
-            style: kVitaNovaTextStyle,
+          SizedBox(
+            height: 22.0,
           ),
           Padding(
             padding: EdgeInsets.only(left: 45.0, right: 45.0, top: 10.0),
@@ -57,23 +63,23 @@ class Registrarse extends StatelessWidget {
               ),
             ),
           ),
-          RaisedButton(
-            padding: EdgeInsets.all(20.0),
-            color: kColorButtonDefaultIndigoAccent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            child: Text(
-              'Crear cuenta',
-              style: TextStyle(
-                fontSize: 20.0,
+          Container(
+            padding: EdgeInsets.only(left: 45.0, right: 45.0, bottom: 22.0),
+            child: RaisedButton(
+              padding: EdgeInsets.all(20.0),
+              color: kColorButtonDefaultIndigoAccent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
               ),
+              child: Text(
+                'Crear cuenta',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {},
           ),
-          SizedBox(
-            height: 15.0,
-          )
         ],
       ),
     );
