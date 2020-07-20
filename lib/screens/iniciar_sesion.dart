@@ -6,20 +6,19 @@ class IniciarSesion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: <Widget>[
-          Flexible(
-            child: Image.asset(
-              'images/Victori Icon.png',
-              scale: 2.0,
-            ),
-          ),
-          Flexible(
-            child: Text(
-              'Vita Nova',
-              style: kVitaNovaTextStyle,
-            ),
+          Column(
+            children: <Widget>[
+              Image.asset(
+                'images/Victori Icon.png',
+                scale: 2.0,
+              ),
+              Text(
+                'Vita Nova',
+                style: kVitaNovaTextStyle,
+              ),
+            ],
           ),
           Form(
             child: Padding(
@@ -39,19 +38,25 @@ class IniciarSesion extends StatelessWidget {
                   inputTextName: 'Contraseña', obscureTextCheck: true),
             ),
           ),
-          RaisedButton(
-            padding: EdgeInsets.all(20.0),
-            color: kColorButtonDefaultIndigoAccent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            child: Text(
-              'Iniciar Sesión',
-              style: TextStyle(
-                fontSize: 20.0,
+          SizedBox(
+            height: 25.0,
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 50.0, right: 50.0),
+            child: RaisedButton(
+              padding: EdgeInsets.all(20.0),
+              color: kColorButtonDefaultIndigoAccent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
               ),
+              child: Text(
+                'Iniciar Sesión',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+              onPressed: () {},
             ),
-            onPressed: () {},
           ),
         ],
       ),
