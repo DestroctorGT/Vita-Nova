@@ -21,9 +21,82 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
                 padding: EdgeInsets.all(10.0),
                 iconSize: 27.0,
                 onPressed: () {},
-              )
+              ),
             ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FlatButton(
+                child: Text(
+                  'Amigos',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+                onPressed: () {},
+              ),
+              SizedBox(
+                width: 16.0,
+              ),
+              Text(
+                '|',
+                style: TextStyle(fontSize: 16.0),
+              ),
+              SizedBox(
+                width: 16.0,
+              ),
+              FlatButton(
+                child: Text(
+                  'Explorar',
+                  style: TextStyle(fontSize: 16.0),
+                ),
+                onPressed: () {},
+              ),
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Card(
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Row(
+                      children: <Widget>[
+                        Text('Nombre del usuario'),
+                      ],
+                    ),
+                  ),
+                  Image.asset(
+                    'images/Victori Icon.png',
+                    scale: 2.0,
+                  ),
+                  Text('Descripcion de la imagen'),
+                  Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(FeatherIcons.messageSquare),
+                          onPressed: () {},
+                        ),
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Icon(FeatherIcons.send),
+                        SizedBox(
+                          width: 15.0,
+                        ),
+                        Icon(FeatherIcons.share),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
