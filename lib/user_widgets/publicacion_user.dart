@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 
@@ -13,10 +14,14 @@ class PublicacionUser extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(15.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
                     'Nombre del usuario',
                     style: TextStyle(fontSize: 20.0),
+                  ),
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
                   ),
                 ],
               ),
