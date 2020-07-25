@@ -10,7 +10,7 @@ const kVitaNovaTextStyle = TextStyle(
   fontSize: 30.0,
   fontFamily: 'Berkshire Swash',
 );
-
+const kIconSizeNavigationBar = 27.0;
 const List<BottomNavigationBarItem> UserNavigationBar = [
   BottomNavigationBarItem(
     icon: Icon(FeatherIcons.home),
