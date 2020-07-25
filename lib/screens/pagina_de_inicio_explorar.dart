@@ -22,7 +22,7 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        iconSize: 27.0,
+        iconSize: kIconSizeNavigationBar,
         items: UserNavigationBar,
       ),
     );
