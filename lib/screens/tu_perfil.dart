@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
-import 'home_screen.dart';
+import 'package:vita_nova/user_widgets/tu_perfil_tus_publicaciones.dart';
+import 'package:vita_nova/user_widgets/tu_perfil_tus_gustos.dart';
 
 class TuPerfil extends StatefulWidget {
   @override
@@ -10,53 +11,38 @@ class TuPerfil extends StatefulWidget {
 class _TuPerfilState extends State<TuPerfil> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(25.0),
-            child: Text(
-              'Nombre de usuario',
-              style: kNormalTextFontSize,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 25.0, right: 25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 40.0,
-                  backgroundColor: Colors.white,
-                ),
-                Text(
-                  'Tienes 10 amigos',
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(
+                child: Text(
+                  'Tus publicaciones',
                   style: kNormalTextFontSize,
                 ),
-              ],
-            ),
+              ),
+              Tab(
+                child: Text(
+                  'Tus Gustos',
+                  style: kNormalTextFontSize,
+                ),
+              ),
+            ],
           ),
-          SizedBox(
-            height: 55.0,
-          ),
-          Center(
-            child: Text(
-              'Descripción pequeña del usuario',
-              style: kNormalTextFontSize,
-            ),
-          ),
-          SizedBox(
-            height: 45.0,
-          ),
-          Center(
-            child: Text('Tus publicaciones', style: kNormalTextFontSize),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        iconSize: kIconSizeNavigationBar,
-        items: UserNavigationBar,
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            TuPerfilTusPublicaciones(),
+            TuPerfilTusGustos(),
+          ],
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          iconSize: kIconSizeNavigationBar,
+          items: UserNavigationBar,
+        ),
       ),
     );
   }
