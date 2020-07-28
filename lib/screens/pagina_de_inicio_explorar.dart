@@ -22,6 +22,7 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        selectedItemColor: kColorButtonDefaultIndigoAccent,
         iconSize: kIconSizeNavigationBar,
         items: UserNavigationBar,
       ),
