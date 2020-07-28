@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
+import 'home_screen.dart';
 
 class TuPerfil extends StatefulWidget {
   @override
@@ -47,28 +48,8 @@ class _TuPerfilState extends State<TuPerfil> {
           SizedBox(
             height: 45.0,
           ),
-          ButtonBar(
-            alignment: MainAxisAlignment.center,
-            children: <Widget>[
-              RaisedButton(
-                padding: EdgeInsets.all(12.0),
-                color: kColorButtonDefaultIndigoAccent,
-                child: Text(
-                  'Tus publicaciones',
-                  style: kNormalTextFontSize,
-                ),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                padding: EdgeInsets.all(12.0),
-                color: kColorButtonDefaultIndigoAccent,
-                child: Text(
-                  'Tus Gustos',
-                  style: kNormalTextFontSize,
-                ),
-                onPressed: () {},
-              ),
-            ],
+          Center(
+            child: Text('Tus publicaciones', style: kNormalTextFontSize),
           ),
         ],
       ),
