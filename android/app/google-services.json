@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "160074352668",
+    "firebase_url": "https://vita-nova-2bd40.firebaseio.com",
+    "project_id": "vita-nova-2bd40",
+    "storage_bucket": "vita-nova-2bd40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160074352668:android:02e1a97730b2b8e3f6b7d9",
+        "android_client_info": {
+          "package_name": "com.gt.vita_nova"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160074352668-1uenu97euovfek6fngvle3fcigkobph0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3jcbjpN1pwFH-jPYMykEmUol7ZZ5hIkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160074352668-1uenu97euovfek6fngvle3fcigkobph0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
