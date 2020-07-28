@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/user_top_icon.dart';
-import 'package:vita_nova/user_widgets/top_ui_pagina_inicio.dart';
 import 'package:vita_nova/user_widgets/publicacion_user.dart';
 
 class PaginaDeInicio extends StatefulWidget {
@@ -16,13 +15,28 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          bottom: ,
+          bottom: TabBar(
+            indicatorColor: kColorButtonDefaultIndigoAccent,
+            tabs: <Widget>[
+              Tab(
+                child: Text(
+                  'Amigos',
+                  style: kNormalTextFontSize,
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'Explorar',
+                  style: kNormalTextFontSize,
+                ),
+              ),
+            ],
+          ),
         ),
-        body: ListView(
+        body: TabBarView(
           children: <Widget>[
-            UserTopIcon(),
-            TopUIPaginaInicio(),
-            PublicacionUser(),
+            PaginaDeInicioExplorar(),
+            PaginaDeInicioAmigos(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -32,6 +46,30 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
           items: UserNavigationBar,
         ),
       ),
+    );
+  }
+}
+
+class PaginaDeInicioExplorar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        UserTopIcon(),
+        PublicacionUser(),
+      ],
+    );
+  }
+}
+
+class PaginaDeInicioAmigos extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        UserTopIcon(),
+        PublicacionUser(),
+      ],
     );
   }
 }
