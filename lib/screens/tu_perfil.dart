@@ -16,6 +16,7 @@ class _TuPerfilState extends State<TuPerfil> {
       child: Scaffold(
         appBar: AppBar(
           bottom: TabBar(
+            indicatorColor: kColorButtonDefaultIndigoAccent,
             tabs: <Widget>[
               Tab(
                 child: Text(
@@ -40,6 +41,7 @@ class _TuPerfilState extends State<TuPerfil> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          selectedItemColor: kColorButtonDefaultIndigoAccent,
           iconSize: kIconSizeNavigationBar,
           items: UserNavigationBar,
         ),
