@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
-import 'package:vita_nova/user_widgets/user_top_icon.dart';
-import 'package:vita_nova/user_widgets/publicacion_user.dart';
+import 'package:vita_nova/user_widgets/pagina_de_inicio_explorar.dart';
+import 'package:vita_nova/user_widgets/pagina_de_inicio_amigos.dart';
 
 class PaginaDeInicio extends StatefulWidget {
   @override
@@ -46,30 +46,6 @@ class _PaginaDeInicioState extends State<PaginaDeInicio> {
           items: UserNavigationBar,
         ),
       ),
-    );
-  }
-}
-
-class PaginaDeInicioExplorar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        UserTopIcon(),
-        PublicacionUser(),
-      ],
-    );
-  }
-}
-
-class PaginaDeInicioAmigos extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        UserTopIcon(),
-        PublicacionUser(),
-      ],
     );
   }
 }
