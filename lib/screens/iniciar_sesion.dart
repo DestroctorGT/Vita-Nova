@@ -57,7 +57,7 @@ class IniciarSesion extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Get.toNamed(kPaginaDeInicio);
+                Get.offAllNamed(kPaginaDeInicio);
               },
             ),
           ),
