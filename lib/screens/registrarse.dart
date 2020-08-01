@@ -99,7 +99,9 @@ class _RegistrarseState extends State<Registrarse> {
                 try {
                   final newUser = await auth.createUserWithEmailAndPassword(
                       email: correo, password: contra);
-                  Get.toNamed(kTuPerfil);
+                  if (newUser != null) {
+                    Get.toNamed(kTuPerfil);
+                  }
                 } catch (e) {
                   print(e);
                 }
