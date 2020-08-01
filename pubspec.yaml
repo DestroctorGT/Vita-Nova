@@ -19,6 +19,7 @@ dependencies:
   get: ^3.3.0
   feather_icons_flutter: ^4.7.4
   firebase_core: ^0.4.5
+  firebase_auth: ^0.16.1
 
 dev_dependencies:
   flutter_test:
