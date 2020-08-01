@@ -10,9 +10,6 @@ class IniciarSesion extends StatefulWidget {
 }
 
 class _IniciarSesionState extends State<IniciarSesion> {
-  String usuario;
-  String contra;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +35,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  usuario = value;
+                  FirebaseSettings().correo = value;
                 },
               ),
             ),
@@ -51,7 +48,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
                 inputTextName: 'Contraseña',
                 obscureTextCheck: true,
                 onChanged: (value) {
-                  contra = value;
+                  FirebaseSettings().contra = value;
                 },
               ),
             ),
@@ -75,8 +72,11 @@ class _IniciarSesionState extends State<IniciarSesion> {
               ),
               onPressed: () async {
                 try {
-                  final logUser = auth.signInWithEmailAndPassword(
-                      email: usuario, password: contra);
+                  final logUser = FirebaseSettings()
+                      .auth
+                      .signInWithEmailAndPassword(
+                          email: FirebaseSettings().correo,
+                          password: FirebaseSettings().contra);
                   if (logUser != null) {
                     Get.offAllNamed(kPaginaDeInicio);
                   }
