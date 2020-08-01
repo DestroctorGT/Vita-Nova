@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
+import 'package:vita_nova/firebase_settings/firebase_settings.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
 
-class IniciarSesion extends StatelessWidget {
+class IniciarSesion extends StatefulWidget {
+  @override
+  _IniciarSesionState createState() => _IniciarSesionState();
+}
+
+class _IniciarSesionState extends State<IniciarSesion> {
+  String usuario;
+  String contra;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +37,9 @@ class IniciarSesion extends StatelessWidget {
                 inputTextName: 'Correo',
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
+                onChanged: (value) {
+                  usuario = value;
+                },
               ),
             ),
           ),
@@ -36,7 +48,12 @@ class IniciarSesion extends StatelessWidget {
               padding: EdgeInsets.only(
                   left: 45.0, right: 45.0, top: 45.0, bottom: 45.0),
               child: UserInputWidget(
-                  inputTextName: 'Contraseña', obscureTextCheck: true),
+                inputTextName: 'Contraseña',
+                obscureTextCheck: true,
+                onChanged: (value) {
+                  contra = value;
+                },
+              ),
             ),
           ),
           SizedBox(
@@ -56,8 +73,14 @@ class IniciarSesion extends StatelessWidget {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: () {
-                Get.offAllNamed(kPaginaDeInicio);
+              onPressed: () async {
+                try {
+                  final logUser = auth.signInWithEmailAndPassword(
+                      email: usuario, password: contra);
+                  Get.offAllNamed(kPaginaDeInicio);
+                } catch (e) {
+                  print(e);
+                }
               },
             ),
           ),
