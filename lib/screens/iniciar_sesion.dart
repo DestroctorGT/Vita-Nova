@@ -77,7 +77,9 @@ class _IniciarSesionState extends State<IniciarSesion> {
                 try {
                   final logUser = auth.signInWithEmailAndPassword(
                       email: usuario, password: contra);
-                  Get.offAllNamed(kPaginaDeInicio);
+                  if (logUser != null) {
+                    Get.offAllNamed(kPaginaDeInicio);
+                  }
                 } catch (e) {
                   print(e);
                 }
