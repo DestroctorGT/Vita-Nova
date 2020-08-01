@@ -10,9 +10,6 @@ class Registrarse extends StatefulWidget {
 }
 
 class _RegistrarseState extends State<Registrarse> {
-  String correo;
-  String contra;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +60,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  correo = value;
+                  FirebaseSettings().correo = value;
                 },
               ),
             ),
@@ -76,7 +73,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputTextName: 'Contraseña',
                 obscureTextCheck: true,
                 onChanged: (value) {
-                  contra = value;
+                  FirebaseSettings().contra = value;
                 },
               ),
             ),
@@ -97,8 +94,11 @@ class _RegistrarseState extends State<Registrarse> {
               ),
               onPressed: () async {
                 try {
-                  final newUser = await auth.createUserWithEmailAndPassword(
-                      email: correo, password: contra);
+                  final newUser = await FirebaseSettings()
+                      .auth
+                      .createUserWithEmailAndPassword(
+                          email: FirebaseSettings().correo,
+                          password: FirebaseSettings().contra);
                   if (newUser != null) {
                     Get.toNamed(kTuPerfil);
                   }
