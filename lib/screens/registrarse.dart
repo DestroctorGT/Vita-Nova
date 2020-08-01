@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:vita_nova/firebase_settings/firebase_settings.dart';
 
 class Registrarse extends StatefulWidget {
   @override
@@ -10,7 +10,6 @@ class Registrarse extends StatefulWidget {
 }
 
 class _RegistrarseState extends State<Registrarse> {
-  final _auth = FirebaseAuth.instance;
   String correo;
   String contra;
 
@@ -98,7 +97,7 @@ class _RegistrarseState extends State<Registrarse> {
               ),
               onPressed: () async {
                 try {
-                  final newUser = await _auth.createUserWithEmailAndPassword(
+                  final newUser = await auth.createUserWithEmailAndPassword(
                       email: correo, password: contra);
                   Get.toNamed(kTuPerfil);
                 } catch (e) {
