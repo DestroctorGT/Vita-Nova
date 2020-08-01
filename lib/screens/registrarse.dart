@@ -2,8 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class Registrarse extends StatelessWidget {
+class Registrarse extends StatefulWidget {
+  @override
+  _RegistrarseState createState() => _RegistrarseState();
+}
+
+class _RegistrarseState extends State<Registrarse> {
+  final _auth = FirebaseAuth.instance;
+  String correo;
+  String contra;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +42,7 @@ class Registrarse extends StatelessWidget {
               child: UserInputWidget(
                 inputTextName: 'Nombre',
                 obscureTextCheck: false,
+                onChanged: () {},
               ),
             ),
           ),
@@ -41,6 +52,7 @@ class Registrarse extends StatelessWidget {
               child: UserInputWidget(
                 inputTextName: 'Apellido',
                 obscureTextCheck: false,
+                onChanged: () {},
               ),
             ),
           ),
@@ -51,6 +63,9 @@ class Registrarse extends StatelessWidget {
                 inputTextName: 'Correo',
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
+                onChanged: (value) {
+                  correo = value;
+                },
               ),
             ),
           ),
@@ -61,6 +76,9 @@ class Registrarse extends StatelessWidget {
               child: UserInputWidget(
                 inputTextName: 'Contraseña',
                 obscureTextCheck: true,
+                onChanged: (value) {
+                  contra = value;
+                },
               ),
             ),
           ),
@@ -78,8 +96,14 @@ class Registrarse extends StatelessWidget {
                   fontSize: 20.0,
                 ),
               ),
-              onPressed: () {
-                Get.toNamed(kTuPerfil);
+              onPressed: () async {
+                try {
+                  final newUser = await _auth.createUserWithEmailAndPassword(
+                      email: correo, password: contra);
+                  Get.toNamed(kTuPerfil);
+                } catch (e) {
+                  print(e);
+                }
               },
             ),
           ),
