@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
-import 'package:vita_nova/firebase_settings/firebase_settings.dart';
+import 'package:vita_nova/firebase_settings/authentication_settings.dart';
 
 class Registrarse extends StatefulWidget {
   @override
@@ -60,7 +60,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  FirebaseSettings().correo = value;
+                  AuthenticationSettings().correo = value;
                 },
               ),
             ),
@@ -73,7 +73,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputTextName: 'Contraseña',
                 obscureTextCheck: true,
                 onChanged: (value) {
-                  FirebaseSettings().contra = value;
+                  AuthenticationSettings().contra = value;
                 },
               ),
             ),
@@ -94,11 +94,11 @@ class _RegistrarseState extends State<Registrarse> {
               ),
               onPressed: () async {
                 try {
-                  final newUser = await FirebaseSettings()
+                  final newUser = await AuthenticationSettings()
                       .auth
                       .createUserWithEmailAndPassword(
-                          email: FirebaseSettings().correo,
-                          password: FirebaseSettings().contra);
+                          email: AuthenticationSettings().correo,
+                          password: AuthenticationSettings().contra);
                   if (newUser != null) {
                     Get.toNamed(kTuPerfil);
                   }
