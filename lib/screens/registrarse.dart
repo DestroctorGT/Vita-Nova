@@ -3,6 +3,7 @@ import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
 import 'package:vita_nova/firebase_settings/authentication_settings.dart';
+import 'package:vita_nova/firebase_settings/cloud_firestore_settings.dart';
 
 class Registrarse extends StatefulWidget {
   @override
@@ -38,7 +39,9 @@ class _RegistrarseState extends State<Registrarse> {
               child: UserInputWidget(
                 inputTextName: 'Nombre',
                 obscureTextCheck: false,
-                onChanged: () {},
+                onChanged: (value) {
+                  CloudFirestoreSettings().nombre = value;
+                },
               ),
             ),
           ),
@@ -48,7 +51,9 @@ class _RegistrarseState extends State<Registrarse> {
               child: UserInputWidget(
                 inputTextName: 'Apellido',
                 obscureTextCheck: false,
-                onChanged: () {},
+                onChanged: (value) {
+                  CloudFirestoreSettings().apellido = value;
+                },
               ),
             ),
           ),
