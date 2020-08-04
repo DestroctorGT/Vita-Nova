@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
-class FirebaseSettings {
+class AuthenticationSettings {
   final auth = FirebaseAuth.instance;
   String correo;
   String contra;
