@@ -104,6 +104,11 @@ class _RegistrarseState extends State<Registrarse> {
                       .createUserWithEmailAndPassword(
                           email: AuthenticationSettings().correo,
                           password: AuthenticationSettings().contra);
+
+                  CloudFirestoreSettings().createNewUserAccount(
+                      AuthenticationSettings().correo,
+                      CloudFirestoreSettings().nombre,
+                      CloudFirestoreSettings().apellido);
                   if (newUser != null) {
                     Get.toNamed(kTuPerfil);
                   }
