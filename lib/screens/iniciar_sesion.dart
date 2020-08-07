@@ -10,6 +10,9 @@ class IniciarSesion extends StatefulWidget {
 }
 
 class _IniciarSesionState extends State<IniciarSesion> {
+  String correo;
+  String contra;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +38,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  AuthenticationSettings().correo = value;
+                  correo = value;
                 },
               ),
             ),
@@ -48,7 +51,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
                 inputTextName: 'Contraseña',
                 obscureTextCheck: true,
                 onChanged: (value) {
-                  AuthenticationSettings().contra = value;
+                  contra = value;
                 },
               ),
             ),
@@ -73,10 +76,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
               onPressed: () async {
                 try {
                   final logUser = AuthenticationSettings()
-                      .auth
-                      .signInWithEmailAndPassword(
-                          email: AuthenticationSettings().correo,
-                          password: AuthenticationSettings().contra);
+                      .createNewAccount(correo: correo, contra: contra);
                   if (logUser != null) {
                     Get.offAllNamed(kPaginaDeInicio);
                   }
