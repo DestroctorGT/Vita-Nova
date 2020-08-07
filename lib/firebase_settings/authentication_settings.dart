@@ -15,4 +15,8 @@ class AuthenticationSettings {
   Future<void> signOut() {
     return _auth.signOut();
   }
+
+  Future<FirebaseUser> getCurrentUser() {
+    return _auth.currentUser();
+  }
 }
