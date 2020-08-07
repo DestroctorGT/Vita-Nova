@@ -76,7 +76,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
               onPressed: () async {
                 try {
                   final logUser = AuthenticationSettings()
-                      .createNewAccount(correo: correo, contra: contra);
+                      .signIn(correo: correo, contra: contra);
                   if (logUser != null) {
                     Get.offAllNamed(kPaginaDeInicio);
                   }
