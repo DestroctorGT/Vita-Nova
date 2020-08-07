@@ -11,6 +11,11 @@ class Registrarse extends StatefulWidget {
 }
 
 class _RegistrarseState extends State<Registrarse> {
+  String nombre;
+  String apellido;
+  String correo;
+  String contra;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +45,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputTextName: 'Nombre',
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  CloudFirestoreSettings().nombre = value;
+                  nombre = value;
                 },
               ),
             ),
@@ -52,7 +57,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputTextName: 'Apellido',
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  CloudFirestoreSettings().apellido = value;
+                  apellido = value;
                 },
               ),
             ),
@@ -65,7 +70,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputType: TextInputType.emailAddress,
                 obscureTextCheck: false,
                 onChanged: (value) {
-                  AuthenticationSettings().correo = value;
+                  correo = value;
                 },
               ),
             ),
@@ -78,7 +83,7 @@ class _RegistrarseState extends State<Registrarse> {
                 inputTextName: 'Contraseña',
                 obscureTextCheck: true,
                 onChanged: (value) {
-                  AuthenticationSettings().contra = value;
+                  contra = value;
                 },
               ),
             ),
@@ -100,15 +105,12 @@ class _RegistrarseState extends State<Registrarse> {
               onPressed: () async {
                 try {
                   final newUser = await AuthenticationSettings()
-                      .auth
-                      .createUserWithEmailAndPassword(
-                          email: AuthenticationSettings().correo,
-                          password: AuthenticationSettings().contra);
+                      .createNewAccount(correo: correo, contra: contra);
 
                   CloudFirestoreSettings().createNewUserAccount(
-                      AuthenticationSettings().correo,
-                      CloudFirestoreSettings().nombre,
-                      CloudFirestoreSettings().apellido);
+                      correoUsuario: correo,
+                      nombreUsuario: nombre,
+                      apellidoUsuario: apellido);
                   if (newUser != null) {
                     Get.toNamed(kTuPerfil);
                   }
