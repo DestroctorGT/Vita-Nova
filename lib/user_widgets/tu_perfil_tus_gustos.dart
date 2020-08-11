@@ -1,7 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
+import 'package:vita_nova/firebase_settings/cloud_firestore_settings.dart';
 
-class TuPerfilTusGustos extends StatelessWidget {
+String userName;
+String userLastName;
+
+class TuPerfilTusGustos extends StatefulWidget {
+  @override
+  _TuPerfilTusGustosState createState() => _TuPerfilTusGustosState();
+}
+
+class _TuPerfilTusGustosState extends State<TuPerfilTusGustos> {
+  void getDataName() async {
+    try {
+      final userNameTemporal = await CloudFirestoreSettings().getUserDataName();
+      if (userNameTemporal != null) {
+        userName = userNameTemporal;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void getDataLastName() async {
+    try {
+      final userLastNameTemporal =
+          await CloudFirestoreSettings().getUserDataLastName();
+      if (userLastNameTemporal != null) {
+        userLastName = userLastNameTemporal;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getDataName();
+    getDataLastName();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -10,7 +49,9 @@ class TuPerfilTusGustos extends StatelessWidget {
           padding: EdgeInsets.all(25.0),
           child: Center(
             child: Text(
-              'Nombre de usuario',
+              userName != null && userLastName != null
+                  ? userName + ' ' + userLastName
+                  : 'Error en los datos, intente de nuevo',
               style: kNormalTextFontSize,
             ),
           ),
