@@ -13,6 +13,7 @@ class CloudFirestoreSettings {
       'nombre': nombreUsuario,
       'apellido': apellidoUsuario,
       'correo': correoUsuario,
+      'amigos': 0,
     });
   }
 
@@ -36,6 +37,18 @@ class CloudFirestoreSettings {
         .document(user.uid)
         .get()
         .then((value) => value.data['apellido']);
+
+    return userData;
+  }
+
+  Future<int> getUserDataFriends() async {
+    var user = await AuthenticationSettings().getCurrentUser();
+    int userData;
+    userData = await _dataBase
+        .collection('users')
+        .document(user.uid)
+        .get()
+        .then((value) => value.data['amigos']);
 
     return userData;
   }
