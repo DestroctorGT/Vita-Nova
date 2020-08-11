@@ -4,6 +4,7 @@ import 'package:vita_nova/firebase_settings/cloud_firestore_settings.dart';
 
 String userName;
 String userLastName;
+int userFriendCount;
 
 class TuPerfilTusGustos extends StatefulWidget {
   @override
@@ -34,11 +35,23 @@ class _TuPerfilTusGustosState extends State<TuPerfilTusGustos> {
     }
   }
 
+  void getDataFriends() async {
+    try {
+      final userFriends = await CloudFirestoreSettings().getUserDataFriends();
+      if (userFriends != null) {
+        userFriendCount = userFriends;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
     getDataName();
     getDataLastName();
+    getDataFriends();
   }
 
   @override
@@ -69,7 +82,9 @@ class _TuPerfilTusGustosState extends State<TuPerfilTusGustos> {
                 height: 35.0,
               ),
               Text(
-                'Tienes 10 amigos',
+                userFriendCount < 1 || userFriendCount != null
+                    ? 'No tienes amigos agregados :('
+                    : 'Tienes ${userFriendCount.toString()} amigos',
                 style: kNormalTextFontSize,
               ),
             ],
