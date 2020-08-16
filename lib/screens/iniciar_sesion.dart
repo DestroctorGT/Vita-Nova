@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
 import 'package:vita_nova/firebase_settings/authentication_settings.dart';
+import 'package:vita_nova/screens/pagina_de_inicio.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
 
@@ -79,7 +80,7 @@ class _IniciarSesionState extends State<IniciarSesion> {
                   final logUser = AuthenticationSettings()
                       .signIn(correo: correo, contra: contra);
                   if (logUser != null) {
-                    Get.offAllNamed(kPaginaDeInicio);
+                    Get.offAllNamed(PaginaDeInicio().id);
                   }
                 } catch (e) {
                   print(e);
