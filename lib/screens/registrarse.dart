@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vita_nova/const.dart';
+import 'package:vita_nova/screens/tu_perfil.dart';
 import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
 import 'package:vita_nova/firebase_settings/authentication_settings.dart';
@@ -113,7 +114,7 @@ class _RegistrarseState extends State<Registrarse> {
                       nombreUsuario: nombre,
                       apellidoUsuario: apellido);
                   if (newUser != null) {
-                    Get.toNamed(kTuPerfil);
+                    Get.toNamed(TuPerfil().id);
                   }
                 } catch (e) {
                   print(e);
