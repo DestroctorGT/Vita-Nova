@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vita_nova/const.dart';
+import 'package:vita_nova/screens/iniciar_sesion.dart';
+import 'package:vita_nova/screens/registrarse.dart';
 import 'package:vita_nova/user_widgets/user_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               buttonPadding: EdgeInsets.all(20.0),
               fontSize: 22.0,
               onPressed: () {
-                Get.toNamed(kIniciarSesion);
+                Get.toNamed(IniciarSesion().id);
               },
             ),
           ),
@@ -47,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               buttonPadding: EdgeInsets.all(20.0),
               fontSize: 22.0,
               onPressed: () {
-                Get.toNamed(kRegistrarse);
+                Get.toNamed(Registrarse().id);
               },
             ),
           ),
