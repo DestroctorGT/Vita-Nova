@@ -6,6 +6,7 @@ import 'package:vita_nova/firebase_settings/authentication_settings.dart';
 import 'package:vita_nova/firebase_settings/cloud_firestore_settings.dart';
 
 class Registrarse extends StatefulWidget {
+  final String id = 'Registrarse';
   @override
   _RegistrarseState createState() => _RegistrarseState();
 }
