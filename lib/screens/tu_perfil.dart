@@ -4,6 +4,7 @@ import 'package:vita_nova/user_widgets/tu_perfil_tus_publicaciones.dart';
 import 'package:vita_nova/user_widgets/tu_perfil_tus_gustos.dart';
 
 class TuPerfil extends StatefulWidget {
+  final String id = 'Tu perfil';
   @override
   _TuPerfilState createState() => _TuPerfilState();
 }
