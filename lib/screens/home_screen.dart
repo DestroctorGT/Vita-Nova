@@ -4,6 +4,7 @@ import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/user_button.dart';
 
 class HomeScreen extends StatelessWidget {
+  final String id = 'Home Screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
