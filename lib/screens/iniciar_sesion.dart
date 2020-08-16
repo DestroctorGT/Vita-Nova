@@ -5,6 +5,7 @@ import 'package:vita_nova/user_widgets/userinputwidget.dart';
 import 'package:get/get.dart';
 
 class IniciarSesion extends StatefulWidget {
+  final String id = 'Iniciar Sesion';
   @override
   _IniciarSesionState createState() => _IniciarSesionState();
 }
