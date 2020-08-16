@@ -4,6 +4,7 @@ import 'package:vita_nova/user_widgets/pagina_de_inicio_explorar.dart';
 import 'package:vita_nova/user_widgets/pagina_de_inicio_amigos.dart';
 
 class PaginaDeInicio extends StatefulWidget {
+  final String id = 'Pagina de inicio';
   @override
   _PaginaDeInicioState createState() => _PaginaDeInicioState();
 }
