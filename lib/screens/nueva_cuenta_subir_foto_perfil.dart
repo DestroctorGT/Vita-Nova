@@ -3,6 +3,7 @@ import 'package:vita_nova/const.dart';
 import 'package:vita_nova/user_widgets/user_button.dart';
 
 class NuevaCuentaSubirFotoPerfil extends StatefulWidget {
+  final String id = 'Nueva cuenta subir foto de perfil';
   @override
   _NuevaCuentaSubirFotoPerfilState createState() =>
       _NuevaCuentaSubirFotoPerfilState();
