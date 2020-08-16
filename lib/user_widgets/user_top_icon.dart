@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:feather_icons_flutter/feather_icons_flutter.dart';
 import 'package:get/get.dart';
 import 'package:vita_nova/const.dart';
+import 'package:vita_nova/screens/tu_perfil.dart';
 
 class UserTopIcon extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class UserTopIcon extends StatelessWidget {
           padding: EdgeInsets.all(10.0),
           iconSize: kIconSizeNavigationBar,
           onPressed: () {
-            Get.toNamed(kTuPerfil);
+            Get.toNamed(TuPerfil().id);
           },
         ),
       ],
