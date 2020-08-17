@@ -48,6 +48,18 @@ class CloudFirestoreSettings {
     return userData;
   }
 
+  Future<String> getUserDataDescription() async {
+    var user = await AuthenticationSettings().getCurrentUser();
+    String userData;
+    userData = await _dataBase
+        .collection('users')
+        .document(user.uid)
+        .get()
+        .then((value) => value.data['descripcion']);
+
+    return userData;
+  }
+
   Future<int> getUserDataFriends() async {
     var user = await AuthenticationSettings().getCurrentUser();
     int userData;
