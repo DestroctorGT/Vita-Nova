@@ -4,6 +4,7 @@ import 'package:vita_nova/firebase_settings/cloud_firestore_settings.dart';
 
 String userName;
 String userLastName;
+String userDescription;
 int userFriendCount;
 
 class TuPerfilTusPublicaciones extends StatefulWidget {
@@ -47,11 +48,24 @@ class _TuPerfilTusPublicacionesState extends State<TuPerfilTusPublicaciones> {
     }
   }
 
+  void getDataDescription() async {
+    try {
+      final userDescriptionTemporal =
+          await CloudFirestoreSettings().getUserDataDescription();
+      if (userDescriptionTemporal != null) {
+        userDescription = userDescriptionTemporal;
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
     getDataName();
     getDataLastName();
+    getDataDescription();
     getDataFriends();
   }
 
@@ -96,7 +110,9 @@ class _TuPerfilTusPublicacionesState extends State<TuPerfilTusPublicaciones> {
         ),
         Center(
           child: Text(
-            'Descripción pequeña del usuario',
+            userDescription != null
+                ? userDescription
+                : 'Error en los datos, intente de nuevo',
             style: kNormalTextFontSize,
           ),
         ),
