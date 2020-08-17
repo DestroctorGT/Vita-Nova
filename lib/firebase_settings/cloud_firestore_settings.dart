@@ -17,6 +17,13 @@ class CloudFirestoreSettings {
     });
   }
 
+  void updateNewUserAccountInfo(String descripcionUsuario) async {
+    var user = await AuthenticationSettings().getCurrentUser();
+    _dataBase.collection('users').document(user.uid).updateData({
+      'descripcion': descripcionUsuario,
+    });
+  }
+
   Future<String> getUserDataName() async {
     var user = await AuthenticationSettings().getCurrentUser();
     String userData;
