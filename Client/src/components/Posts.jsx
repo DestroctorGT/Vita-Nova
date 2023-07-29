@@ -3,6 +3,7 @@ import profilePicPost from "../assets/certificadoHenry.png";
 import { css } from "../../styled-system/css";
 import { flex } from "../../styled-system/patterns";
 import { IconSend, IconMessageCircle2, IconShare } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 export default function Posts() {
   return (
@@ -22,33 +23,37 @@ export default function Posts() {
             gap: "15px",
           })}
         >
-          <img
-            src={profilePic}
-            alt="user account pic"
-            className={css({
-              width: "100%",
-              height: "auto",
-              maxWidth: "46px",
-              borderRadius: "5px",
-            })}
-          />
-
-          <div
-            className={flex({
-              direction: "column",
-              align: "center",
-              justify: "center",
-            })}
-          >
-            <p
+          <Link>
+            <img
+              src={profilePic}
+              alt="user account pic"
               className={css({
-                textTransform: "capitalize",
+                width: "100%",
+                height: "auto",
+                maxWidth: { base: "46px", lg: "52px" },
+                borderRadius: "5px",
+              })}
+            />
+          </Link>
+
+          <Link>
+            <div
+              className={flex({
+                direction: "column",
+                align: "center",
+                justify: "center",
               })}
             >
-              gino tapia
-            </p>
-            <p className={css({ color: "#9BAEC8" })}>@ginotapia</p>
-          </div>
+              <p
+                className={css({
+                  textTransform: "capitalize",
+                })}
+              >
+                gino tapia
+              </p>
+              <p className={css({ color: "#9BAEC8" })}>@ginotapia</p>
+            </div>
+          </Link>
         </li>
 
         <li>
@@ -75,12 +80,25 @@ export default function Posts() {
           gap: "10px",
         })}
       >
-        <p>Totalmente agradecido por mi nuevo certificado de soyhenry</p>
+        <p
+          className={css({
+            maxWidth: { base: "300px", lg: "500px" },
+            wordWrap: "break-word",
+          })}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero fugit
+          commodi rerum, laboriosam vero recusandae sint veritatis quis, tenetur
+          quo totam, quae culpa suscipit nisi et est. Veritatis, dolores atque?
+        </p>
 
         <img
           src={profilePicPost}
           alt="account pic post"
-          className={css({ width: "100%", height: "auto", maxWidth: "290px" })}
+          className={css({
+            width: "100%",
+            height: "auto",
+            maxWidth: { base: "290px", lg: "450px" },
+          })}
         />
       </article>
 
@@ -89,24 +107,24 @@ export default function Posts() {
           paddingTop: "20px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "start",
+          justifyContent: { base: "start" },
           gap: "15px",
         })}
       >
-        <button>
+        <button className={css({ cursor: "pointer" })}>
           <IconSend color="white" />
         </button>
 
         <div
           className={flex({ align: "center", justify: "center", gap: "8px" })}
         >
-          <button>
+          <button className={css({ cursor: "pointer" })}>
             <IconMessageCircle2 color="white" />
           </button>
-          <p>300</p>
+          <p className={css({ cursor: "default" })}>300</p>
         </div>
 
-        <button>
+        <button className={css({ cursor: "pointer" })}>
           <IconShare color="white" />
         </button>
       </div>

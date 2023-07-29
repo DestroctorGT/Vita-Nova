@@ -8,6 +8,7 @@ export default function LandingPage() {
         padding: { base: "5%" },
         display: "flex",
         flexFlow: "column wrap",
+        alignItems: "center",
         gap: "50px",
       })}
     >
