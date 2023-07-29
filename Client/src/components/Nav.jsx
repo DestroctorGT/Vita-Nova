@@ -1,5 +1,6 @@
 import { css } from "../../styled-system/css";
 import { flex } from "../../styled-system/patterns";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -24,18 +25,20 @@ export default function Nav() {
             })}
           >
             <li>
-              <button
-                className={css({
-                  padding: "4px",
-                  color: "#000814",
-                  backgroundColor: "#FFD60A",
-                  borderRadius: "10px",
-                  textTransform: "capitalize",
-                  cursor: "pointer",
-                })}
-              >
-                crear cuenta
-              </button>
+              <Link to={"/SignUp"}>
+                <button
+                  className={css({
+                    padding: "4px",
+                    color: "#000814",
+                    backgroundColor: "#FFD60A",
+                    borderRadius: "10px",
+                    textTransform: "capitalize",
+                    cursor: "pointer",
+                  })}
+                >
+                  crear cuenta
+                </button>
+              </Link>
             </li>
             <li>
               <button
