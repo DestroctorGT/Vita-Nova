@@ -6,7 +6,7 @@ export default function SignUp() {
   return (
     <section
       className={flex({
-        margin: "12% 2%",
+        margin: { base: "12% 2%", lg: "5% 12%" },
         padding: "2%",
         direction: "column",
         justify: "center",
@@ -20,13 +20,18 @@ export default function SignUp() {
           className={css({
             textTransform: "capitalize",
             fontWeight: "bold",
-            fontSize: "20px",
+            fontSize: { base: "x-large", lg: "xx-large" },
             paddingBottom: "2%",
           })}
         >
           normas generales
         </h2>
-        <p className={css({ paddingBottom: "5%" })}>
+        <p
+          className={css({
+            paddingBottom: "5%",
+            maxWidth: { base: "auto", lg: "75ch" },
+          })}
+        >
           En caso de incumplir con alguna de estas reglas, los moderadores
           tienen el único poder de bloquear las cuentas y todos tus datos te
           serán entregados.
@@ -47,13 +52,14 @@ export default function SignUp() {
           <li>
             <div
               className={css({
-                padding: "4%",
+                padding: { base: "4%", lg: "2%" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 width: "4ch",
                 height: "4ch",
                 background: "#FFC300",
+                color: "black",
                 borderRadius: "50%",
               })}
             >
@@ -61,59 +67,68 @@ export default function SignUp() {
             </div>
 
             <div>
-              No está permitido el contenido sexual y el contenido violento
-              tiene que ser marcado como sensible a la hora de postear.
+              <p className={css({ maxWidth: "75ch" })}>
+                No está permitido el contenido sexual y el contenido violento
+                tiene que ser marcado como sensible a la hora de postear.
+              </p>
             </div>
           </li>
 
           <li>
             <div
               className={css({
-                padding: "4%",
+                padding: { base: "4%", lg: "2%" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 width: "4ch",
                 height: "4ch",
                 background: "#FFC300",
+                color: "black",
                 borderRadius: "50%",
               })}
             >
               2
             </div>
 
-            <div>No racismo, sexismo, homofobia, transfobia y xenofobia</div>
+            <div>
+              <p>No racismo, sexismo, homofobia, transfobia y xenofobia.</p>
+            </div>
           </li>
 
           <li>
             <div
               className={css({
-                padding: "4%",
+                padding: { base: "4%", lg: "2%" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 width: "4ch",
                 height: "4ch",
                 background: "#FFC300",
+                color: "black",
                 borderRadius: "50%",
               })}
             >
               3
             </div>
 
-            <div>No incitación a la violencia de ningún tipo.</div>
+            <div>
+              <p>No incitación a la violencia de ningún tipo.</p>
+            </div>
           </li>
 
           <li>
             <div
               className={css({
-                padding: "4%",
+                padding: { base: "4%", lg: "2%" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 width: "4ch",
                 height: "4ch",
                 background: "#FFC300",
+                color: "black",
                 borderRadius: "50%",
               })}
             >
@@ -121,33 +136,38 @@ export default function SignUp() {
             </div>
 
             <div>
-              No al acoso de ningún tipo y tampoco el doxxeo hacia otros
-              usuarios
+              <p>
+                No al acoso de ningún tipo y tampoco el doxxeo hacia otros
+                usuarios.
+              </p>
             </div>
           </li>
 
           <li>
             <div
               className={css({
-                padding: "4%",
+                padding: { base: "4%", lg: "2%" },
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 width: "4ch",
                 height: "4ch",
                 background: "#FFC300",
+                color: "black",
                 borderRadius: "50%",
               })}
             >
               5
             </div>
 
-            <div>No difundir información falsa o desinformación</div>
+            <div>
+              <p>No difundir información falsa o desinformación.</p>
+            </div>
           </li>
         </ol>
       </article>
 
-      <article>
+      <article className={css({ margin: { lg: "4% 30% 0" } })}>
         <button
           className={css({
             padding: "2%",
