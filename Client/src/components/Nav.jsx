@@ -1,6 +1,7 @@
 import { css } from "../../styled-system/css";
 import { flex } from "../../styled-system/patterns";
 import { Link } from "react-router-dom";
+import VitaNovaLogo from "../assets/V-Logo.png";
 
 export default function Nav() {
   return (
@@ -14,7 +15,15 @@ export default function Nav() {
           borderBottom: "1px solid #FFF",
         })}
       >
-        <li>Vita Nova Logo</li>
+        <img
+          src={VitaNovaLogo}
+          alt="Vita Nova company logo"
+          className={css({
+            width: "100%",
+            height: "auto",
+            maxWidth: "80px",
+          })}
+        />
 
         <li>
           <ul
