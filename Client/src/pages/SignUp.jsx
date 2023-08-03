@@ -2,6 +2,7 @@ import { css } from "../../styled-system/css";
 import { flex } from "../../styled-system/patterns";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import VitaNovaLogo from "../assets/V-Logo.png";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -43,7 +44,11 @@ export default function SignUp() {
         gap: "25px",
       })}
     >
-      <h2>Vita Nova Logo</h2>
+      <img
+        src={VitaNovaLogo}
+        alt="Vita Nova company logo"
+        className={css({ width: "100%", height: "auto", maxWidth: "150px" })}
+      />
 
       {!acceptConditions ? (
         <>
@@ -239,7 +244,7 @@ export default function SignUp() {
           <form
             onSubmit={handleSubmit}
             className={css({
-              margin: { lg: "10%" },
+              margin: { lg: "2%" },
               display: "flex",
               flexFlow: "column",
               alignItems: { lg: "center" },
@@ -300,17 +305,16 @@ export default function SignUp() {
             <div
               className={flex({
                 direction: "row",
-                align: "center",
                 gap: "8px",
               })}
             >
               <input
                 type="checkbox"
-                id="vehicle1"
-                name="vehicle1"
-                value="Bike"
+                id="privacidad"
+                name="privacidad"
+                value="privacidad"
               />
-              <label htmlFor="vehicle1">
+              <label htmlFor="privacidad">
                 He leído y acepto la política de privacidad
               </label>
             </div>
@@ -318,6 +322,7 @@ export default function SignUp() {
             <div
               className={css({
                 margin: { lg: "4% 30% 0" },
+                width: { base: "100%", lg: "50%" },
               })}
             >
               <button
