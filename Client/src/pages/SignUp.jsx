@@ -70,8 +70,11 @@ export default function SignUp() {
               })}
             >
               En caso de incumplir con alguna de estas reglas, los moderadores
-              tienen el único poder de bloquear las cuentas y todos tus datos te
-              serán entregados.
+              tienen el único poder de{" "}
+              <span className={css({ color: "#FF4500" })}>
+                <strong>bloquear las cuentas</strong>
+              </span>{" "}
+              y todos tus datos te serán entregados.
             </p>
 
             <ol
@@ -248,7 +251,7 @@ export default function SignUp() {
               display: "flex",
               flexFlow: "column",
               alignItems: { lg: "center" },
-              gap: "10px",
+              gap: "15px",
             })}
           >
             <input
@@ -338,6 +341,22 @@ export default function SignUp() {
                 })}
               >
                 crear cuenta
+              </button>
+
+              <button
+                className={css({
+                  padding: "2%",
+                  marginBottom: "4%",
+                  border: "1px solid #FFD60A",
+                  borderRadius: "8px",
+                  color: "#FFD60A",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  width: "100%",
+                })}
+                onClick={() => navigate("/")}
+              >
+                cancelar
               </button>
               <Link to={"/SignIn"}>Iniciar Sesión</Link>
             </div>
