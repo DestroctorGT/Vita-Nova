@@ -3,6 +3,7 @@ import { flex } from "../../styled-system/patterns";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import VitaNovaLogo from "../assets/V-Logo.png";
+import validationSignUp from "../utils/validationSignUp";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ export default function SignUp() {
     setInputs({
       ...inputs,
       [inputName]: inputValue,
+      error: validationSignUp(e.target),
     });
   };
 
@@ -290,7 +292,7 @@ export default function SignUp() {
 
             <input
               type="password"
-              name="checkpassword"
+              name="checkPassword"
               value={inputs.checkPassword}
               placeholder="Confirmar contraseña"
               onChange={handleInput}
