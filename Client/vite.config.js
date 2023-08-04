@@ -17,18 +17,19 @@ const moduleExclude = (match) => {
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), moduleExclude("text-encoding")],
-  include: [
-    "src",
-    "styled-system",
-    "gun",
-    "gun/gun",
-    "gun/sea",
-    "gun/sea.js",
-    "gun/lib/then",
-    "gun/lib/webrtc",
-    "gun/lib/radix",
-    "gun/lib/radisk",
-    "gun/lib/store",
-    "gun/lib/rindexed",
-  ],
+  optimizeDeps: {
+    include: [
+      "gun",
+      "gun/gun",
+      "gun/sea",
+      "gun/sea.js",
+      "gun/lib/then",
+      "gun/lib/webrtc",
+      "gun/lib/radix",
+      "gun/lib/radisk",
+      "gun/lib/store",
+      "gun/lib/rindexed",
+    ],
+  },
+  include: ["src", "styled-system"],
 });
